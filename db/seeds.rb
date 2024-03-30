@@ -7,5 +7,14 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
-puts "\n== Seeding the database with fixtures =="
-system("bin/rails db:fixtures:load")
+
+Company.create(name: 'KPMG')
+Company.create(name: 'PwC')
+
+User.create(email: 'accountant@kpmg.com', password: 'password', company: Company.first)
+User.create(email: 'manager@kpmg.com', password: 'password', company: Company.first)
+User.create(email: 'eavesdropper@pwc.com', password: 'password', company: Company.last)
+
+Quote.create(name: 'First quote', company: Company.first)
+Quote.create(name: 'Second quote', company: Company.first)
+Quote.create(name: 'Third quote', company: Company.first)
