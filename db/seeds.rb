@@ -18,3 +18,6 @@ User.create(email: 'eavesdropper@pwc.com', password: 'password', company: Compan
 Quote.create(name: 'First quote', company: Company.first)
 Quote.create(name: 'Second quote', company: Company.first)
 Quote.create(name: 'Third quote', company: Company.first)
+
+LineItemDate.create(quote: Quote.first, date: Date.current)
+LineItemDate.create(quote: Quote.first, date: Date.current + 1.week)
